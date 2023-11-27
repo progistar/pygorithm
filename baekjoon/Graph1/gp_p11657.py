@@ -25,7 +25,7 @@ for edge in bus_lines:
         break
 
 
-    
+
 if isNegativeCyclic:
     print(-1)
 else:
