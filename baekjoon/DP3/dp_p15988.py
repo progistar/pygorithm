@@ -15,7 +15,8 @@ dp[3] = 4
 for i in range(4, len(dp)):
     ## for loop을 도는 것 보다는 hard coding해서 나열하는 것이 % 연산이 적어져서 더 빠름.
     # 두배 정도 더 빨라짐 (ex> for loop took ~932 ms V.S. hard coding took ~488-524 ms)
-    dp[i] = (dp[i-1] + dp[i-2] + dp[i-3] + dp[i]) % D
+    # dp[i] = (dp[i-1] + dp[i-2] + dp[i-3] + dp[i]) % D
+    dp[i] = ((dp[i-1] % D) + (dp[i-2] % D) + dp[i-3] + dp[i]) % D
         
 for c in C:
     print(dp[c])
