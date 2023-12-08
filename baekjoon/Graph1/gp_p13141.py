@@ -1,6 +1,9 @@
 import sys
 input = sys.stdin.readline
 
+## 이 문제는 해답을 보고 공부할 필요가 있음
+## 
+
 N,M = map(int,input().split())
 
 DP = [[1e9]*N for i in range(N)]
@@ -14,8 +17,10 @@ for k in range(N):
   for i in range(N):
     for j in range(N):
       DP[i][j] = min(DP[i][j],DP[i][k]+DP[k][j])
+      
 for i in range(N):
   DP[i][i] = 0
+
 result = 1e9
 for i in range(N):
   MAX = 0
